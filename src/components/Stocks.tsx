@@ -1,20 +1,74 @@
-import React from "react";
 import { AiOutlineHeart, AiOutlineShopping } from "react-icons/ai";
+import Carousel from "./Carousel";
 import Star from "./Star";
-import items from "../db/items";
+import one from "../images/one.png";
+import two from "../images/two.png";
+import three from "../images/three.png";
+import four from "../images/four.png";
 
 const Stocks = () => {
+    const items = [
+        {
+            image: one,
+            id: 1,
+            price: 50.00,
+            discountPrice: 65.00,
+            name: "Блузка женская классная",
+            stars: 5
+        },
+        {
+            image: two,
+            id: 2,
+            price: 50.00,
+            discountPrice: 65.00,
+            name: "Блузка женская классная",
+            stars: 4
+        },
+        {
+            image: three,
+            id: 3,
+            price: 50.00,
+            discountPrice: 65.00,
+            name: "Блузка женская классная",
+            stars: 4
+        },
+        {
+            image: four,
+            id: 4,
+            price: 50.00,
+            discountPrice: 65.00,
+            name: "Блузка женская классная",
+            stars: 4
+        },
+        {
+            image: four,
+            id: 4,
+            price: 50.00,
+            discountPrice: 65.00,
+            name: "Блузка женская классная",
+            stars: 5
+        },
+        {
+            image: four,
+            id: 4,
+            price: 50.00,
+            discountPrice: 65.00,
+            name: "Блузка женская классная",
+            stars: 5
+        }
+    ];
 
     return (
-        <div className="flex flex-col mt-[128px] font-Roboto">
+        <section className="flex flex-col mt-[128px] font-Roboto ml-32 mr-32">
             <div>
                 <span className="text-[40px]">Успей купить!</span>
             </div>
             <div>
                 <span className="font-badScript text-[40px] mt-[31px] ml-[268px] text-[#514A7E]">Акции</span>
             </div>
-            <div className="flex justify-between items-center mt-[60px]">
-                {items.map((item, index) => (
+            <Carousel>
+            <div className="flex justify-around items-center mt-[60px] sm:flex">
+                {items.slice(0, 4).map((item, index) => (
                     <div key={index}>
                         <div>
                             <img src={item.image} alt="" />
@@ -38,7 +92,7 @@ const Stocks = () => {
                             </button>
                             <div className="flex items-end ml-[75px]">
                                 {
-                                    (new Array(item.stars)).fill(0).map((item, index) => (
+                                    (new Array(item.stars)).fill(0).map((_, index) => (
                                         <Star className="ml-[5px]" key={index} width={12} height={12} />
                                     ))
                                 }
@@ -47,7 +101,8 @@ const Stocks = () => {
                     </div>
                 ))}
             </div>
-        </div>
+            </Carousel>
+        </section>
     )
 };
 

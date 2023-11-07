@@ -1,28 +1,56 @@
 const About = () => {
+    const aboutItems = [
+        { description: "Скидки постоянным клиентам от 5%" },
+        { description: "Предлагаем самые выгодные цены" },
+        { description: "Наши покупатели всегда остаются довольны" },
+        { description: "Широкий ассортимент товаров для всей семьи" }
+    ];
+
     return (
-        <div className="flex flex-col font-Roboto">
+        <section className="flex flex-col font-Roboto ml-32 mr-32">
             <div className="mt-[150px]">
                 <p className="text-[40px] leading-9">Почему выбирают нас?</p>
             </div>
             <div className="flex justify-between mt-[94px] text-[#7D7D7D]">
-                <div>
-                    <span>Скидки постоянным <br /> клиентам от 5%
-                        <svg className="w-7 h-7 fill-[#514A7E]" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g filter="url(#filter0_d_59_37)">
-                                <circle cx="24" cy="20" r="14" />
-                            </g>
-                        </svg>
-                    </span>
-                </div>
-                <div>
-                    <span>Предлагаем самые <br /> выгодные цены</span>
-                </div>
-                <div>
-                    <span>Наши покупатели всегда <br /> остаются довольны</span>
-                </div>
-                <div>
-                    <span>Ширикий ассортимент <br /> товаров для всей семьи</span>
-                </div>
+                <svg className="absolute ml-[120px] mt-4" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g filter="url(#filter0_d_59_37)">
+                        <circle cx="24" cy="20" r="14" fill="#514A7E" />
+                    </g>
+                    <defs>
+                        <filter id="filter0_d_59_37" x="0" y="0" width="48" height="48" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                            <feOffset dy="4" />
+                            <feGaussianBlur stdDeviation="5" />
+                            <feComposite in2="hardAlpha" operator="out" />
+                            <feColorMatrix type="matrix" values="0 0 0 0 0.31816 0 0 0 0 0.289236 0 0 0 0 0.495833 0 0 0 0.4 0" />
+                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_59_37" />
+                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_59_37" result="shape" />
+                        </filter>
+                    </defs>
+                </svg>
+                {aboutItems.map((item, index) => (
+                    <div key={index} className="w-[175px]">
+                        <span>{item.description}</span>
+                    </div>
+                ))}
+                <svg className="absolute ml-[1120px] mt-[-24px]" width="67" height="67" viewBox="0 0 67 67" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g filter="url(#filter0_d_59_44)">
+                        <circle cx="33.5" cy="29.5" r="23.5" fill="#514A7E" />
+                    </g>
+                    <defs>
+                        <filter id="filter0_d_59_44" x="0" y="0" width="67" height="67" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                            <feOffset dy="4" />
+                            <feGaussianBlur stdDeviation="5" />
+                            <feComposite in2="hardAlpha" operator="out" />
+                            <feColorMatrix type="matrix" values="0 0 0 0 0.31816 0 0 0 0 0.289236 0 0 0 0 0.495833 0 0 0 0.4 0" />
+                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_59_44" />
+                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_59_44" result="shape" />
+                        </filter>
+                    </defs>
+                </svg>
             </div>
             <div className="flex justify-between mt-[98px] text-[#7D7D7D]">
                 <div>
@@ -35,15 +63,46 @@ const About = () => {
                 </div>
                 <div>
                     <span>Возможность доставки в <br /> любой город Беларуси </span>
+                    <svg className="absolute ml-[170px] top-[1450px]" width="67" height="67" viewBox="0 0 67 67" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g filter="url(#filter0_d_59_48)">
+                            <circle cx="33.5" cy="29.5" r="23.5" fill="#514A7E" />
+                        </g>
+                        <defs>
+                            <filter id="filter0_d_59_48" x="0" y="0" width="67" height="67" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                <feOffset dy="4" />
+                                <feGaussianBlur stdDeviation="5" />
+                                <feComposite in2="hardAlpha" operator="out" />
+                                <feColorMatrix type="matrix" values="0 0 0 0 0.31816 0 0 0 0 0.289236 0 0 0 0 0.495833 0 0 0 0.4 0" />
+                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_59_48" />
+                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_59_48" result="shape" />
+                            </filter>
+                        </defs>
+                    </svg>
                 </div>
                 <div>
                     <span>Пункты выдачи заказов <br /> рядом с домом</span>
-                </div>
-                <div>
-
+                    <svg className="absolute ml-44 mt-[-55px]" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g filter="url(#filter0_d_59_51)">
+                            <circle cx="24" cy="20" r="14" fill="#514A7E" />
+                        </g>
+                        <defs>
+                            <filter id="filter0_d_59_51" x="0" y="0" width="48" height="48" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                <feOffset dy="4" />
+                                <feGaussianBlur stdDeviation="5" />
+                                <feComposite in2="hardAlpha" operator="out" />
+                                <feColorMatrix type="matrix" values="0 0 0 0 0.31816 0 0 0 0 0.289236 0 0 0 0 0.495833 0 0 0 0.4 0" />
+                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_59_51" />
+                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_59_51" result="shape" />
+                            </filter>
+                        </defs>
+                    </svg>
                 </div>
             </div>
-        </div >
+        </section>
     )
 };
 

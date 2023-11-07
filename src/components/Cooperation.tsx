@@ -1,10 +1,27 @@
-import cooperationItems from "../db/cooperationItems";
-import advantagesItems from "../db/advantagesItems";
+import advantagesItems from "./AdvantagesItems";
 
 const Cooperation = () => {
+    const cooperationItems = [
+        {
+            title: "Становись партнёром",
+            description: "Регистрируйтесь и переходите в свой кабинет"
+        },
+        {
+            title: "Рекламируйте товары",
+            description: "Рекламируйте наши товары на форумах, сайтах, в социальных сетях"
+        },
+        {
+            title: "Приводите покупателей",
+            description: "Приводите покупателей на наш сайт по уникальной ссылке"
+        },
+        {
+            title: "Получайте бонусы",
+            description: "Копите бонусы от каждого оплаченного заказа"
+        }
+    ];
 
     return (
-        <div className="mt-[150px] font-Roboto">
+        <section className="mt-[150px] font-Roboto ml-32 mr-32">
             <div>
                 <span className="text-[40px] font-light">Сотрудничество с нами</span>
             </div>
@@ -39,7 +56,7 @@ const Cooperation = () => {
                     </div>
                 ))}
             </div>
-        </div>
+        </section>
     )
 };
 

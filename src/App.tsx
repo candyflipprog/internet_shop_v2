@@ -1,4 +1,3 @@
-import React from 'react';
 import "./index.css";
 import Header from "./components/Header";
 import WelcomePage from "./components/WelcomePage";
@@ -13,7 +12,7 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="App ml-32 mr-32 mt-12">
+    <div className="App mt-12">
         <Header />
         <WelcomePage />
         <About />

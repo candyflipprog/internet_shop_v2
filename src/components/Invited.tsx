@@ -2,20 +2,20 @@ const Invited = () => {
     const inputs = [
         {
             id: 1,
-            input: <input type="text" placeholder="Ваше имя" className="focus:outline-none" />
+            input: <input type="text" placeholder="Ваше имя" className="focus:outline-none bg-[#FFFDF5]" />
         },
         {
             id: 2,
-            input: <input type="text" placeholder="Номер телефона" className="focus:outline-none" />
+            input: <input type="text" placeholder="Номер телефона" className="focus:outline-none bg-[#FFFDF5]" />
         },
         {
             id: 3,
-            input: <input type="text" placeholder="Электронная почта" className="focus:outline-none" />
+            input: <input type="email" placeholder="Электронная почта" className="focus:outline-none bg-[#FFFDF5]" />
         }
     ];
 
     return (
-        <div className="mt-[151px] w-[1050px] h-[500px] ml-[-130px] bg-[#514A7E] py-9">
+        <section className="mt-[151px] w-[1050px] h-[500px] bg-[#514A7E] py-9">
             <div className="w-[850px] h-[420px] bg-[#FFFDF5] ml-32 flex flex-col">
                 <div className="ml-[51px]">
                     <div className="mb-[55px] mt-[35px]">
@@ -28,8 +28,8 @@ const Invited = () => {
                             </div>
                         ))}
                         <div className="flex items-center">
-                            <input type="checkbox" className="w-4 h-4 appearance-none rounded-full border-2 border-[#514A7E] cursor-pointer checked:bg-[#514A7E]" />
-                            <span className="text-[12px] text-[#7D7D7D] leading-[9.5px] ml-1">Даю согласие на обработку персональных данных</span>
+                            <input type="checkbox" name="accept" className="w-4 h-4 appearance-none rounded-full border-2 border-[#514A7E] cursor-pointer checked:bg-[#514A7E]" />
+                            <label className="text-[12px] text-[#7D7D7D] leading-[9.5px] ml-1" htmlFor="accept">Даю согласие на обработку персональных данных</label>
                         </div>
                         <button className="flex items-center bg-[#514A7E] w-[148px] h-[37px] mt-[41px] hover:w-[172px] hover:h-[43px] hover:transition-[.5s]" type="submit">
                             <span className="ml-[25px] text-sm text-[#FFFDF5] font-normal">Отправить</span>
@@ -40,7 +40,7 @@ const Invited = () => {
                     </form>
                 </div>
             </div>
-        </div>
+        </section>
     )
 };
 

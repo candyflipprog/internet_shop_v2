@@ -30,7 +30,7 @@ const Footer = () => {
     ];
 
     return (
-        <div className="w-[100%] h-[100%] mt-[150px] bg-[#514A7E]">
+        <footer className="w-[100%] h-[100%] mt-[150px] bg-[#514A7E]">
             <div className="flex justify-between ml-[135px] mr-[133px]">
                 <div className="flex flex-col mt-[82px]">
                     <span className="text-[20px] text-[#FFFDF5] font-normal leading-normal mb-[20px]">Информация</span>
@@ -69,7 +69,7 @@ const Footer = () => {
                     <img src={CoctailLogo} alt="" className="w-[84px] h-[84px]" />
                 </div>
             </div>
-        </div>
+        </footer>
     )
 };
 

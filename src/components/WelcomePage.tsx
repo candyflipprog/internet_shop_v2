@@ -3,7 +3,7 @@ import Rectangle2 from "../images/Rectangle2.png";
 
 const WelcomePage = () => {
     return (
-        <div className="flex flex-col font-Roboto">
+        <section className="flex flex-col font-Roboto ml-32 mr-32">
             <div className="flex justify-between mt-[50px]">
                 <img src={Rectangle1} alt="" className="w-[278px] h-[242px] object-cover" />
                 <img src={Rectangle2} alt="" className="w-[476px] h-[416px]" />
@@ -28,7 +28,7 @@ const WelcomePage = () => {
                     </svg>
                 </div>
             </div>
-        </div >
+        </section >
     )
 };
 
