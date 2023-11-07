@@ -66,7 +66,7 @@ const Faq = () => {
             <div className="flex flex-col mt-[66px]">
                 {faqItems.map((item) => (
                     <div key={item.id} className="cursor-pointer" onClick={() => toggleDescription(item.id.toString())}>
-                        <div className="flex items-center border-solid border-b w-[100%] border-[#7D7D7D] mb-[19px]">
+                        <div className={`flex items-center w-full mb-[19px] ${selectedIds.includes(item.id.toString()) ? 'border-none' : 'border-b border-solid border-[#7D7D7D]'}`}>
                             <p className="flex items-center mb-[17px] mt-[6px] text-[20px]">
                                 {item.title}
                             </p>
