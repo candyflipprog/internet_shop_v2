@@ -1,14 +1,51 @@
 import { useState } from "react";
-import faqItems from "../db/faqItems";
 import { AiOutlinePlus } from "react-icons/ai";
 
 const Faq = () => {
+    const faqItems = [
+        {
+            id: 1,
+            title: "Как сделать заказ?",
+            description: "Чтобы сделать заказ пользователь переходит в каталог сайта, выбирает нужный товар, отпраляет его в коризину, выбрав нужный размер и цвет, и нажимает кнопку “заказать”. Выбирает способ оплаты и доставки и покупает товар. "
+        },
+        {
+            id: 2,
+            title: "Способы оплаты",
+            description: "Почему шрек жёлтый?"
+        },
+        {
+            id: 3,
+            title: "Доставка",
+            description: "Красный слон"
+        },
+        {
+            id: 4,
+            title: "Сроки доставки",
+            description: "Утиные истории"
+        },
+        {
+            id: 5,
+            title: "Как сделать обмен?",
+            description: "Если на вас напал медведь, вам уже не спастись"
+        },
+        {
+            id: 6,
+            title: "Как сделать возврат?",
+            description: "123123123"
+        },
+        {
+            id: 7,
+            title: "Куда и когда вернутся деньги за возвращённый товар?",
+            description: "123123123"
+        }
+    ];
+
     const [selectedIds, setSelectedIds] = useState<string[]>([]);
     const [openedIds, setOpenedIds] = useState<string[]>([]);
 
     const toggleDescription = (id: string) => {
         if (selectedIds.includes(id)) {
-            setSelectedIds(selectedIds.filter((itemId: any) => itemId !== id));
+            setSelectedIds(selectedIds.filter((itemId) => itemId !== id));
         } else {
             setSelectedIds([...selectedIds, id]);
         };
@@ -21,14 +58,14 @@ const Faq = () => {
     };
 
     return (
-        <div className="mt-[150px] font-Roboto">
+        <section className="mt-[150px] font-Roboto ml-32 mr-32">
             <div>
                 <span className="text-[40px]">Часто задаваемые вопросы</span>
                 <p className="font-badScript ml-[539px] mt-[-10px] text-[40px] text-[#514A7E]">FAQ</p>
             </div>
             <div className="flex flex-col mt-[66px]">
                 {faqItems.map((item) => (
-                    <div key={item.id}>
+                    <div key={item.id} className="cursor-pointer" onClick={() => toggleDescription(item.id.toString())}>
                         <div className="flex items-center border-solid border-b w-[100%] border-[#7D7D7D] mb-[19px]">
                             <p className="flex items-center mb-[17px] mt-[6px] text-[20px]">
                                 {item.title}
@@ -36,12 +73,10 @@ const Faq = () => {
                             {openedIds.includes(item.id.toString()) ? (
                                 <AiOutlinePlus
                                     className="block ml-auto mr-0 cursor-pointer rotate-45 transition-[.5s]"
-                                    onClick={() => toggleDescription(item.id.toString())}
                                 />
                             ) : (
                                 <AiOutlinePlus
                                     className="block ml-auto mr-0 cursor-pointer transition-[.5s]"
-                                    onClick={() => toggleDescription(item.id.toString())}
                                 />
                             )}
                         </div>
@@ -53,7 +88,7 @@ const Faq = () => {
                     </div>
                 ))}
             </div>
-        </div>
+        </section>
     );
 };
 
