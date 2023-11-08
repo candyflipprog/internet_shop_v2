@@ -6,7 +6,7 @@ const UserMenu = () => {
     const [showLoginWindow, setShowLoginWindow] = useState<boolean>(false);
 
     return (
-        <div className="absolute w-52 h-64 ml-[-120px] mt-[22px] bg-[#FFFDF5] text-[#121212] text-[12px] flex flex-col items-center">
+        <div className="absolute w-52 h-64 ml-[-120px] mt-[22px] bg-stone-50 text-[#121212] text-[12px] flex flex-col items-center">
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Windows_10_Default_Profile_Picture.svg/800px-Windows_10_Default_Profile_Picture.svg.png" alt="profile" className="w-10 h-10 mt-[18px]" />
             <div className="mt-[15px]">
                 <button className="w-[109px] h-[26px] bg-[#514A7E] text-[#FFFDF5]" onClick={() => setShowLoginWindow(!showLoginWindow)}>Войти</button>
