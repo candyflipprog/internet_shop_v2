@@ -23,7 +23,7 @@ const UserMenu = () => {
                     <AiOutlineEye className="w-5 h-5" /> <span className="ml-2">Просмотренные</span>
                 </div>
             </div>
-            {showLoginWindow && <LoginWindow />}
+            {showLoginWindow ? <LoginWindow /> : null}
         </div>
     )
 };
