@@ -1,40 +1,26 @@
+import { useState } from "react";
+import RegistrationWindow from "./RegistrationWindow";
+
 const LoginWindow = () => {
+    const [showRegistrationWindow, setShowRegistrationWindow] = useState<boolean>(false);
+
     return (
-        <div className="absolute block ml-auto mr-auto">
-            <div>
-                <svg width="67" height="67" viewBox="0 0 67 67" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g filter="url(#filter0_d_125_4630)">
-                        <circle cx="33.5" cy="29.5" r="23.5" fill="#514A7E" />
-                    </g>
-                    <defs>
-                        <filter id="filter0_d_125_4630" x="0" y="0" width="67" height="67" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                            <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
-                            <feOffset dy="4" />
-                            <feGaussianBlur stdDeviation="5" />
-                            <feComposite in2="hardAlpha" operator="out" />
-                            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" />
-                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_125_4630" />
-                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_125_4630" result="shape" />
-                        </filter>
-                    </defs>
-                </svg>
+        <div className={`fixed top-64 left-[525px] bg-[#FFFDF5] w-[900px] h-[470px] z-auto font-Roboto`}>
+            <div className={`ml-[113px] mt-[137px] ${showRegistrationWindow ? "flex-none" : null}`}>
+                <div>
+                    <span className="text-[#121212] text-[40px] font-light leading-9">Вход в личный кабинет</span>
+                </div>
+                <div className="flex flex-col w-[372px]">
+                    <input type="email" placeholder="Электронная почта" className="border-solid border-b border-[#7D7D7D] outline-none mt-[60px] bg-[#FFFDF5]" />
+                    <input type="password" placeholder="Пароль" className="border-solid border-b border-[#7D7D7D] outline-none mt-[34px] bg-[#FFFDF5]" />
+                    <label htmlFor="forget_password" className="text-[14px] text-[#514A7E] mt-[23px]">Не помню пароль</label>
+                </div>
+                <div className="mt-[25px]">
+                    <button className="w-[148px] h-[37px] bg-[#514A7E] text-[#FFFDF5] border-solid border border-[#514A7E]">Войти в кабинет</button>
+                    <button className="w-[150px] h-[37px] border-solid border border-[#514A7E] ml-[46px]" onClick={() => setShowRegistrationWindow(!showRegistrationWindow)}>Регистрация</button>
+                </div>
             </div>
-
-            <div>
-                <span>Вход в личный кабинет</span>
-            </div>
-
-            <div className="w-[372px]">
-                <input type="email" placeholder="Электронная почта" className="border border-b border-[#7D7D7D]"/>
-                <input type="password" placeholder="Пароль" className="border border-b border-[#7D7D7D]"/>
-                <span>Не помню пароль</span>
-            </div>
-
-            <div>
-                <button>Войти в личный кабинет</button>
-                <button>Регистрация</button>
-            </div>
+            {showRegistrationWindow ? <RegistrationWindow /> : null}
         </div>
     )
 };
