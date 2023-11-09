@@ -1,16 +1,27 @@
-import { useState } from "react";
-import { AiOutlineMenu, AiOutlineSearch, AiOutlineHeart, AiOutlineShopping, AiOutlineEye } from "react-icons/ai";
+import { useState, useEffect } from "react";
+import { AiOutlineMenu, AiOutlineSearch, AiOutlineHeart, AiOutlineShopping } from "react-icons/ai";
 import { BsPerson } from "react-icons/bs";
 import UserMenu from "./UserMenu";
 import LeftSideBar from "./LeftSideBar";
+import AuthUserMenu from "./AuthUserMenu";
 
 const Header = () => {
     const [showUserMenu, setShowUserMenu] = useState(false);
-    const [showSideBar, setShowSiderBar] = useState<boolean>(false);
+    const [showSideBar, setShowSideBar] = useState(false);
+    const [auth, setAuth] = useState(false);
+
+    useEffect(() => {
+        const authData = JSON.parse(localStorage.getItem("auth") || "{}").auth;
+        setAuth(authData);
+    }, []);
+
+    const handleUserMenuClick = () => {
+        setShowUserMenu(!showUserMenu);
+    };
 
     return (
         <header className="flex justify-between items-center font-Roboto ml-32 mr-32">
-            <AiOutlineMenu className="w-9 h-9 cursor-pointer" onClick={() => setShowSiderBar(!showSideBar)} />
+            <AiOutlineMenu className="w-9 h-9 cursor-pointer" onClick={() => setShowSideBar(!showSideBar)} />
             {showSideBar && <span className="absolute mt-12"><LeftSideBar /></span>}
             <div className="flex justify-between items-center">
                 <AiOutlineSearch className="w-5 h-5 mr-[19px]" />
@@ -21,9 +32,13 @@ const Header = () => {
                 />
                 <div className="flex justify-end ml-[39px]">
                     <span>
-                        <BsPerson className="w-5 h-5 mr-[15px] cursor-pointer" onClick={() => setShowUserMenu(!showUserMenu)} />
-                        {showUserMenu ? <UserMenu /> : null}
+                        {auth ? (
+                            showUserMenu ? <AuthUserMenu /> : null
+                        ) : (
+                            showUserMenu ? <UserMenu /> : null
+                        )}
                     </span>
+                    <BsPerson className="w-5 h-5 mr-[15px] cursor-pointer" onClick={handleUserMenuClick} />
                     <AiOutlineHeart className="w-5 h-5 mr-[15px]" />
                     <AiOutlineShopping className="w-5 h-5" />
                 </div>
