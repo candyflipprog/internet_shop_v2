@@ -7,7 +7,7 @@ const LoginWindow = () => {
     const [password, setPassword] = useState<string>('');
 
     return (
-        <div className={`flex flex-col fixed top-64 left-[480px] bg-stone-50 w-[1000px] h-[530px] z-50 font-Roboto}`}>
+        <section className={`flex flex-col fixed top-64 left-[480px] bg-stone-50 w-[1000px] h-[530px] z-50 font-Roboto}`}>
             <div className={`ml-[113px] mt-[137px] ${showRegistrationWindow ? "hidden" : "flex flex-col"}`}>
                 <div>
                     <span className="text-[#121212] text-[40px] font-light leading-9">Вход в личный кабинет</span>
@@ -23,7 +23,7 @@ const LoginWindow = () => {
                 </div>
             </div>
             {showRegistrationWindow ? <RegistrationWindow /> : null}
-        </div>
+        </section>
     )
 };
 
