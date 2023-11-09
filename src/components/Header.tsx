@@ -5,10 +5,15 @@ import UserMenu from "./UserMenu";
 import LeftSideBar from "./LeftSideBar";
 import AuthUserMenu from "./AuthUserMenu";
 
-const Header = () => {
+interface Props {
+    onSearch: (searchValue: string) => void;
+};
+
+const Header: React.FC<Props> = ({ onSearch }) => {
     const [showUserMenu, setShowUserMenu] = useState(false);
     const [showSideBar, setShowSideBar] = useState(false);
     const [auth, setAuth] = useState(false);
+    const [searchValue, setSearchValue] = useState("");
 
     useEffect(() => {
         const authData = JSON.parse(localStorage.getItem("auth") || "{}").auth;
@@ -17,6 +22,11 @@ const Header = () => {
 
     const handleUserMenuClick = () => {
         setShowUserMenu(!showUserMenu);
+    };
+
+    const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setSearchValue(event.target.value);
+        onSearch(event.target.value);
     };
 
     return (
@@ -29,6 +39,8 @@ const Header = () => {
                     className="border-solid border-b border-gray-300 w-80 placeholder:text-[12px] placeholder:text-[#7D7D7D] placeholder:font-thin focus:outline-none"
                     type="text"
                     placeholder="Поиск"
+                    onChange={handleSearchChange}
+                    value={searchValue}
                 />
                 <div className="flex justify-end ml-[39px]">
                     <span>
