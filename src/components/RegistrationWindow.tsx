@@ -12,7 +12,7 @@ const RegistrationWindow = () => {
     const [check, setCheck] = useState(false);
 
     return (
-        <div className="w-[1440px] h-[530px]">
+        <section className="w-[1440px] h-[530px]">
             <div className={`font-Roboto mt-[110px] ml-[136px]  ${showLoginWindow ? "hidden" : "flex flex-col"}`} >
                 <div>
                     <span className="text-[#121212] text-[40px] font-light">Регистрация</span>
@@ -39,7 +39,7 @@ const RegistrationWindow = () => {
                 </div>
             </div >
             {showLoginWindow ? <LoginWindow /> : null}
-        </div>
+        </section>
     )
 };
 
