@@ -9,9 +9,13 @@ import Stocks from "./Stocks";
 import WelcomePage from "./WelcomePage";
 
 const NavBar = () => {
+    const handleSearch = (searchValue: string) => {
+        console.log("Search value:", searchValue);
+    };
+
     return (
         <div>
-            <Header />
+            <Header onSearch={handleSearch} />
             <WelcomePage />
             <About />
             <Stocks />
