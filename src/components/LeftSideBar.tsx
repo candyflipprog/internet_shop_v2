@@ -22,7 +22,7 @@ const LeftSideBar: React.FC = () => {
         { id: 10, link: "Акции" }
     ];
 
-    const subMenuItems: {[key: number]: string[]} = {
+    const subMenuItems: { [key: number]: string[] } = {
         1: ["Майки",
             "Костюмы",
             "Брюки",
@@ -43,7 +43,7 @@ const LeftSideBar: React.FC = () => {
 
     return (
         <div>
-            <div className={`flex flex-col absolute bg-[#121212] shrink-0 w-96 h-[895px]`}>
+            <div className={`flex flex-col absolute bg-[#121212] shrink-0 ${menuItemId ? "w-96" : "w-72"} h-[895px]`}>
                 <img src={NeonLogo} alt="neon-logo" className="w-[118px] h-[118px] ml-0" />
                 <ol className="flex flex-col text-[#FFFDF5] ml-[18px]">
                     {menuItems.map((item) => (
@@ -59,14 +59,14 @@ const LeftSideBar: React.FC = () => {
                 {menuItemId !== null && (
                     <ol className="fixed py-32 px-44 text-[#FFFDF5] ml-[18px]">
                         {subMenuItems[menuItemId].map((subMenuItem, index) => (
-                            <li key={index} className="mt-2 text-[14px] cursor-pointer font-light">
+                            <li key={index} className="text-[14px] cursor-pointer font-light mt-5">
                                 {subMenuItem}
                             </li>
                         ))}
                     </ol>
                 )}
             </div>
-        </div>
+        </div >
     );
 };
 
