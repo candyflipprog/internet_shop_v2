@@ -10,19 +10,21 @@ import WelcomePage from "./WelcomePage";
 
 const NavBar = () => {
     const handleSearch = (searchValue: string) => {
-        console.log("Search value:", searchValue);
+        console.log(searchValue);
     };
 
     return (
         <div>
             <Header onSearch={handleSearch} />
-            <WelcomePage />
-            <About />
-            <Stocks />
-            <Reviews />
-            <Faq />
-            <Cooperation />
-            <Invited />
+            <main>
+                <WelcomePage />
+                <About />
+                <Stocks />
+                <Reviews />
+                <Faq />
+                <Cooperation />
+                <Invited />
+            </main>
             <Footer />
         </div>
     )
