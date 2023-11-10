@@ -62,7 +62,7 @@ const Footer = () => {
                             <span className="mr-[10px] text-[#FFFDF5]" key={index}>{item.icon}</span>
                         ))}
                     </div>
-                    <span className="text-[14px] text-[#FFFDF5] font-light leading-normal mt-[31px]">+375255990755</span>
+                    <a className="text-[14px] text-[#FFFDF5] font-light leading-normal mt-[31px]" href="tel:+375255990755">+375255990755</a>
                     <span className="text-[14px] text-[#FFFDF5] font-light leading-normal mt-[32px]">круглосуточно, без выходных</span>
                 </div>
                 <div className="mt-[220px] ml-[97px]">
