@@ -3,6 +3,7 @@ import { BiLogOut } from "react-icons/bi";
 import { HiOutlineDocument } from "react-icons/hi2";
 import { IoPersonOutline } from "react-icons/io5";
 import { LiaCoinsSolid } from "react-icons/lia";
+import { Link } from "react-router-dom";
 
 const AuthUserMenu = () => {
     const onLogOut = () => {
@@ -23,9 +24,11 @@ const AuthUserMenu = () => {
                 <div className="flex items-center mt-[15px]">
                     <AiOutlineHeart className="w-5 h-5" /> <span className="ml-2">Избранное</span>
                 </div>
-                <div className="flex items-center mt-[26px]">
-                    <AiOutlineEye className="w-5 h-5" /> <span className="ml-2">Просмотренные</span>
-                </div>
+                <Link to="/catalog">
+                    <div className="flex items-center mt-[26px]">
+                        <AiOutlineEye className="w-5 h-5" /> <span className="ml-2">Просмотренные</span>
+                    </div>
+                </Link>
                 <div className="border-solid border-b border-[#7D7D7D] mt-[19px]"></div>
                 <div className="flex items-center mt-5">
                     <LiaCoinsSolid className="w-5 h-5" /><span className="ml-2">Бонусы</span>
@@ -37,9 +40,11 @@ const AuthUserMenu = () => {
                     <HiOutlineDocument className="w-5 h-5" /><span className="ml-2">История покупок</span>
                 </div>
                 <div className="border-solid border-b border-[#7D7D7D] mt-[19px]"></div>
-                <div className="flex items-center mt-[15px] cursor-pointer hover:text-red-500" onClick={onLogOut}>
-                    <BiLogOut className="w-5 h-5 cursor-pointer"/><span className="ml-2">Выйти</span>
-                </div>
+                <Link to="/">
+                    <div className="flex items-center mt-[15px] cursor-pointer hover:text-red-500" onClick={onLogOut}>
+                        <BiLogOut className="w-5 h-5 cursor-pointer" /><span className="ml-2">Выйти</span>
+                    </div>
+                </Link>
             </div>
         </div>
     )
