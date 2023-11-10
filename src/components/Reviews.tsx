@@ -60,8 +60,10 @@ const Reviews = () => {
                             <div className="block mt-auto mb-auto ml-[-82px] w-[270px] h-[70px]">
                                 <span className="text-[12px] text-[#7D7D7D] mt-[14px]">{item.review}</span>
                                 <br />
-                                <span className="text-[12px] text-[#121212] mt-[50px]">{item.name} {item.surname}</span>
-                                <span className="text-[12px] text-[#514A7E]">{item.publicationDate}</span>
+                                <div className="py-4 gap-2">
+                                    <span className="text-[12px] text-[#121212]">{item.name} {item.surname}</span>
+                                    <span className="text-[12px] text-[#514A7E] ml-4">{item.publicationDate}</span>
+                                </div>
                             </div>
                         </div>
                     ))}
