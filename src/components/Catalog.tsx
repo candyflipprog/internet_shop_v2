@@ -2,6 +2,7 @@ import { useState } from "react";
 import { AiFillHeart, AiOutlineShopping } from "react-icons/ai";
 import Header from "./Header";
 import Star from "./Star";
+import { Link } from "react-router-dom";
 
 interface Item {
     image: string;
@@ -19,6 +20,10 @@ const Catalog: React.FC = () => {
     const handleSearch = (searchValue: string) => {
         const filtered = itemsArray.filter(item => item.name.toLowerCase().includes(searchValue.toLowerCase()));
         setFilteredItems(filtered);
+    };
+
+    const onLogout = () => {
+        localStorage.removeItem("auth");
     };
 
     return (
@@ -50,9 +55,11 @@ const Catalog: React.FC = () => {
                         <span>История покупок</span>
                     </div>
                     <div className="border-solid border-b border-[#7D7D7D] w-[178px] mt-5 mb-5"></div>
-                    <div>
-                        <span>Выйти</span>
-                    </div>
+                    <Link to="/">
+                        <div onClick={onLogout}>
+                            <span className="cursor-pointer hover:bg-red-500">Выйти</span>
+                        </div>
+                    </Link>
                     <div className="mt-96">
                         <svg className="w-[82px] h-[82px] cursor-pointer focus:w-[92px] focus:h-[92px] hover:transition-[.9s]" viewBox="0 0 92 92" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={() => window.scroll({ top: 0, behavior: "smooth" })}>
                             <g filter="url(#filter0_d_180_2)">
@@ -63,7 +70,7 @@ const Catalog: React.FC = () => {
                     </div>
                 </div>
             </div>
-            <div className="fixed py-52 px-96 gap-16 flex justify-around items-center mt-[60px] sm:flex">
+            <div className="absolute py-52 px-96 gap-16 flex justify-around items-center mt-[60px] sm:flex">
                 {filteredItems.map((item, index) => (
                     <div key={index}>
                         <div>
