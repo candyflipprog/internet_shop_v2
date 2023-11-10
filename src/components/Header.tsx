@@ -4,6 +4,7 @@ import { BsPerson } from "react-icons/bs";
 import UserMenu from "./UserMenu";
 import LeftSideBar from "./LeftSideBar";
 import AuthUserMenu from "./AuthUserMenu";
+import { Link } from "react-router-dom";
 
 interface Props {
     onSearch: (searchValue: string) => void;
@@ -13,6 +14,7 @@ const Header: React.FC<Props> = ({ onSearch }) => {
     const [showUserMenu, setShowUserMenu] = useState(false);
     const [showSideBar, setShowSideBar] = useState(false);
     const [auth, setAuth] = useState(false);
+
     const [searchValue, setSearchValue] = useState("");
 
     useEffect(() => {
@@ -25,8 +27,9 @@ const Header: React.FC<Props> = ({ onSearch }) => {
     };
 
     const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setSearchValue(event.target.value);
-        onSearch(event.target.value);
+        const searchValue = event.target.value;
+        setSearchValue(searchValue);
+        onSearch(searchValue);
     };
 
     return (
@@ -51,8 +54,12 @@ const Header: React.FC<Props> = ({ onSearch }) => {
                         )}
                     </span>
                     <BsPerson className="w-5 h-5 mr-[15px] cursor-pointer" onClick={handleUserMenuClick} />
-                    <AiOutlineHeart className="w-5 h-5 mr-[15px]" />
-                    <AiOutlineShopping className="w-5 h-5" />
+                    <Link to="/catalog/favorites">
+                        <AiOutlineHeart className="w-5 h-5 mr-[15px]" />
+                    </Link>
+                    <Link to="/catalog">
+                        <AiOutlineShopping className="w-5 h-5" />
+                    </Link>
                 </div>
             </div>
         </header>
