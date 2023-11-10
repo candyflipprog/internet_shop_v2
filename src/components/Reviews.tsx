@@ -1,5 +1,4 @@
 import Star from "./Star";
-import Carousel from "./Carousel";
 import avatar1 from "../images/avatar1.png";
 import avatar2 from "../images/avatar2.png";
 
@@ -49,26 +48,24 @@ const Reviews = () => {
                 <span className="text-[40px]">Отзывы наших покупателей</span>
             </div>
             <div className="flex">
-                <Carousel>
-                    <div className="flex mt-[60px]">
-                        {reviews.slice(0, 2).map((item, index) => (
-                            <div key={index} className="flex w-[460px] h-[205px] bg-[#FFFDF5] mr-[80px]">
-                                <img src={item.image} alt="" className="block mt-auto mb-auto w-[94px] h-[94px] ml-[24px]" />
-                                <div className="flex ml-[49px] mt-[47px] h-[10px]">
-                                    {new Array(item.stars).fill(0).map((_, idx) => (
-                                        <Star className="ml-[5px]" key={idx} width={12} height={12} />
-                                    ))}
-                                </div>
-                                <div className="block mt-auto mb-auto ml-[-82px] w-[270px] h-[70px]">
-                                    <span className="text-[12px] text-[#7D7D7D] mt-[14px]">{item.review}</span>
-                                    <br />
-                                    <span className="text-[12px] text-[#121212] mt-[50px]">{item.name} {item.surname}</span>
-                                    <span className="text-[12px] text-[#514A7E]">{item.publicationDate}</span>
-                                </div>
+                <div className="flex mt-[60px]">
+                    {reviews.slice(0, 2).map((item, index) => (
+                        <div key={index} className="flex w-[460px] h-[205px] bg-[#FFFDF5] mr-[80px]">
+                            <img src={item.image} alt="" className="block mt-auto mb-auto w-[94px] h-[94px] ml-[24px]" />
+                            <div className="flex ml-[49px] mt-[47px] h-[10px]">
+                                {new Array(item.stars).fill(0).map((_, idx) => (
+                                    <Star className="ml-[5px]" key={idx} width={12} height={12} />
+                                ))}
                             </div>
-                        ))}
-                    </div>
-                </Carousel>
+                            <div className="block mt-auto mb-auto ml-[-82px] w-[270px] h-[70px]">
+                                <span className="text-[12px] text-[#7D7D7D] mt-[14px]">{item.review}</span>
+                                <br />
+                                <span className="text-[12px] text-[#121212] mt-[50px]">{item.name} {item.surname}</span>
+                                <span className="text-[12px] text-[#514A7E]">{item.publicationDate}</span>
+                            </div>
+                        </div>
+                    ))}
+                </div>
                 <div className="block mt-auto mb-auto w-[92px] h-[92px] border-solid border border-[#514A7E] rounded-full ml-[80px]">
                     <div className="cursor-pointer">
                         <svg width="92" height="92" viewBox="0 0 92 92" fill="none" xmlns="http://www.w3.org/2000/svg">
